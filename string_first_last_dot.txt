@@ -1,0 +1,16 @@
+Console.WriteLine("Wprowadź tekst do modyfikacji.\n");
+string text = Console.ReadLine();
+string[] words = text.Split(' ');
+string modifiedText = "";
+for (int i = 1; i < words.Length - 1; i++)
+{
+    modifiedText += words[i].ToLower() + " ";
+}
+modifiedText = modifiedText.Trim();
+modifiedText = char.ToUpper(modifiedText[0]) + modifiedText.Substring(1);
+if (!modifiedText.EndsWith("."))
+{
+    modifiedText += ".";
+}
+Console.WriteLine(modifiedText);
+Console.ReadKey();

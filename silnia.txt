@@ -1,0 +1,38 @@
+SILNIA
+using System;
+namespace silnia
+{
+class Silnia
+{
+///silnia rekurencyjnie
+ private static int silnia1(int i)
+{
+if (i < 1)
+return 1;
+else
+return i * silnia1(i - 1);
+}
+/// silnia iteracyjnie 
+private static int silnia2(int n)
+{
+int result = 1;
+for (int i=1; i<=n; i++)
+{
+result *= i;
+}
+return result;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////
+static void Main(string[] args)
+{
+String line;
+int n;
+ 
+Console.WriteLine("Podaj dla jakiej liczby obliczyc silnie.\n");
+line = Console.ReadLine();
+n = int.Parse(line);
+Console.WriteLine(n + "! = " +  silnia1(n));
+Console.WriteLine(n + "! = " +  silnia2(n));
+}
+}
+}
